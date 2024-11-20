@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Free Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{
+    background-color:#e8deda;
+  }
+/* Full-width input fields */
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #6f6b58;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: #96a9a9;
+  
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #b1aaa5;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #b37c51;
+  cursor: pointer;
+}
+.userdata
+{
+  display: grid;
+  grid-template-columns: auto auto auto ;
+  min-height: 500px;
+  width: 900px;
+  margin: auto;
+  margin-bottom: 50px;
+  justify-content: space-between;
+  background-color: #7a5c5c;
+}
+.usernumber
+{ 
+  height: 110px;
+  margin: auto;
+  margin-top: 10px;
+  padding: 15px;
+  color: white;
+}
+.newh2
+{
+  color: #fb9563;
+}
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li> <a href="Numerology.html">Home</a></li>
+    <li><a href="UserNumerology.html">Numerology</a></li>
+    <li><a href="form.html"style="word-spacing: normal;">Free Calculator</a></li>
+  </ul>
+</nav>
+
+<div class="main_Grid">
+  <div class="Losho_Grid User_grid">
+    <h1 id="hea">LOSHO GRID</h1>
+  <div class="grid-container" id="grid-container" style="display: none; margin-top: 20px;">
+    <div class="grid-item" id="r1"></div>
+    <div class="grid-item" id="r2"></div>
+    <div class="grid-item" id="r3"></div>  
+    <div class="grid-item" id="rr1"></div>
+    <div class="grid-item" id="rr2"></div>
+    <div class="grid-item" id="rr3"></div>  
+    <div class="grid-item" id="rrr1"></div>
+    <div class="grid-item" id="rrr2"></div>
+    <div class="grid-item" id="rrr3"></div>  
+  </div>
+    <div class="line">
+    <label for="table" class="nam" id="nam"> </label>
+    </div>
+  </div>
+  </div>
+  <div class="userdata" id="id02" style="display:none">
+    <div class="usernumber " id="number1">Number : 1 => </div>
+    <div class="usernumber " id="number2">Number : 2 =></div>
+    <div class="usernumber " id="number3">Number : 3 =></div>
+    <div class="usernumber " id="number4">Number : 4 =></div>
+    <div class="usernumber " id="number5">Number : 5 =></div>
+    <div class="usernumber " id="number6">Number : 6 =</div>
+    <div class="usernumber " id="number7">Number : 7 =></div>
+    <div class="usernumber " id="number8">Number : 8 =></div>
+    <div class="usernumber " id="number9">Number : 9 =></div>
+  </div>    
+
+  <form class="modal-content animate" onsubmit=" processData(event); this.reset(); document.getElementById('id01').style.display='none'; document.getElementById('grid-container').style.display=''; document.getElementById('id02').style.display='';document.getElementById('hea').style.display='none'; return false" id="id01" method="post">
+
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="Images/numimg.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+
+      <label for="uname"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="uname" id="uname" required>
+    <br><br>
+
+      <label for="uname"><b>Birthdate</b></label>
+        <input type="date" placeholder="DD-MM-YYYY" name="bdate" id="bdate" required>
+    <br><br>
+
+      <label for="gend"><b>Gender</b></label>
+      <input type="radio" name="gend" value="male">
+      <label for="male">Male</label>
+      <input type="radio" name="gend" value="female">
+      <label for="female">Female</label>
+
+    <br>
+    <br>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <footer>
+    <div class="foter">
+      <p style=" padding: 15px 0px; text-align: center;">All Rights &copy Reserved</p>
+    </div>
+  </footer>
+  
+<script src="JS/Numerolgy.js"></script>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+      }
+}
+</script>
+</body>
+</html>

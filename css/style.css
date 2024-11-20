@@ -1,0 +1,36 @@
+h1{
+   margin-top: 13px;
+   text-align: center;
+}
+
+.nam
+{
+    margin-top: 20px;
+
+}
+.btn
+{
+    display: block; 
+    margin: 12px auto;
+    height: 50px;
+    width: 100px;
+    background-color:#746363;
+    border: 2px solid black;
+    color:black;
+    border-radius: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.line
+{
+    text-align: center;
+    /* padding-top: 10px; */
+}
+.user
+{
+    margin-top: 20px;
+}
