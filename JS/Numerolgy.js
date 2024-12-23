@@ -230,7 +230,7 @@ function calculateBirthdateSum(birthdate, gender) {
   let saturn_n="Lack in Knowledge, Motivation, Intuition, Organized, Spirituality, Study"
   let mars_n="Lack in Prosperity, Humanity, Social life, Fame, "
   
-  let p=[yearSum,totalSum,daySum,day,year,month].toString().split("");
+  let p=[yearSum,totalSum,daySum,a].toString().split("");
   console.log(p,typeof p);
   
   let p1 = p.filter((value) => value == 1);
