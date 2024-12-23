@@ -246,7 +246,7 @@ function calculateBirthdateSum(birthdate, gender) {
   n4.innerHTML = p3.length > 0 ? `<h2>Number 3 is Present! </h2>${jupiatr}` : `<h2 class="newh2">Number 3 is Missing !</h2>${jupiatr_n}`;
   
   let p4 = p.filter((value) => value == 4);
-  n1.innerHTML = p4.length > 1 ? `<h2>Number 4 is Present ! </h2>${ketu}` : `<h2 class="newh2">Number 4 is Missing !</h2>${ketu_n}`;
+  n1.innerHTML = p4.length > 0 ? `<h2>Number 4 is Present ! </h2>${ketu}` : `<h2 class="newh2">Number 4 is Missing !</h2>${ketu_n}`;
   
   let p5 = p.filter((value) => value == 5);
   console.log(p5);
